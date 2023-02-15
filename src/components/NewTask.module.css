@@ -9,7 +9,7 @@
 .NewTask input{
     padding-left: 1rem;
     background: var(--gray-400);
-    width: 100%;
+    flex: 1;
     border: 1px solid var(--gray-700);
     border-radius: 8px;
     resize: none;

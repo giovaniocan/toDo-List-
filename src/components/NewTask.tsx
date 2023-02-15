@@ -1,7 +1,10 @@
 import sytles from './NewTask.module.css'
+import { Tasks } from './Tasks'
 
 export function NewTask() {
     return (
+        <>
+        
         <div>
             <form className={sytles.NewTask}>
                 <input type="text"
@@ -13,6 +16,9 @@ export function NewTask() {
                     <img src="./src/assets/plus.svg" alt="" />
                 </button>
             </form>
+
         </div>
+        <Tasks/>
+        </>
     )
 }

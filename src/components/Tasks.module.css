@@ -1,0 +1,79 @@
+.Tasks{
+    max-width: 100%;
+    margin:4rem 22rem 0;
+
+}
+
+.tasksInfo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.tasksCreated{
+    display:flex;
+    align-items:center;
+}
+
+.tasksCreated h2{
+    font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1rem;
+  color: var(--blue);
+}
+
+.completedTasks{
+    display:flex;
+    align-items:center;
+}
+
+.completedTasks h2{
+    font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1rem;
+  color: var(--purple);
+}
+
+.quantityCircle{
+    margin-left:0.5rem;
+    padding: 0.125rem 0.5rem;
+
+    background: var(--gray-400);
+    border-radius: 10rem;
+  
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--gray-200);
+}
+
+
+
+
+.empty{
+  margin-top: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  border-top: 1px solid var(--gray-400);
+  padding:4rem 1.5rem;
+  border-radius:10px;
+
+}
+
+.empty h3 {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 140%;
+  color: var(--gray-300);
+  text-align: center;
+}
+
+.empty h4 {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 140%;
+  color: var(--gray-300);
+  text-align: center;
+}
