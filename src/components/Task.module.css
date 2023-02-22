@@ -20,6 +20,7 @@
   
   .finishButton{
     color: var(--purpleDark);
+    text-decoration-line: line-through;
   }
   .finishButton:hover{
     color: var(--purple);

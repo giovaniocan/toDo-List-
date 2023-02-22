@@ -1,32 +1,52 @@
 import sytles from './Task.module.css'
 
 import { CheckCircle, Circle, Trash } from "phosphor-react";
+import { useState } from 'react';
 
-interface TaksProps{
+interface TaksProps {
     content: string
-    onDeleteTask: (comment:string) => void
+    onDeleteTask: (id: string) => void
+    isFinished: boolean
+    id: string
+    onChangeFinishState :(id: string) => void
 
 }
 
 
-export function Task({content, onDeleteTask}: TaksProps){
+export function Task({ content, onDeleteTask, isFinished, id , onChangeFinishState}: TaksProps) {
+    const [finished, setFinished] = useState(isFinished);
 
-    function handleDeleteTask(){
-        onDeleteTask(content) /*mudar depois para poder passar o id*/ 
+    function handleDeleteTask() {
+        onDeleteTask(id) 
     }
-    
 
-    return(
+    function alterCheckedButton(){  
+        onChangeFinishState(id)
+        setFinished(!finished)  
+        
+    }
+
+
+    return (
         <div className={sytles.listTaks}>
-                    <button className={sytles.notFinishButton}>
-                        <Circle size={20} />  
-                    </button>
-                    <div className={sytles.textAndCrash}>
-                        <p>{content}</p>    
-                        <button onClick={handleDeleteTask}>
-                            <Trash size={20} />
-                        </button>
-                    </div>
-                </div>
+            {finished
+                ?
+                <button className={sytles.finishButton} onClick={alterCheckedButton}>
+                    <CheckCircle size={20} className={sytles.checkCircle} />
+                </button>
+                :
+                <button className={sytles.notFinishButton} onClick={alterCheckedButton}>
+                    <Circle size={20} />
+                </button>
+            }
+
+
+            <div className={sytles.textAndCrash}>
+                <p className={finished? sytles.finishButton: ""}>{content}</p>
+                <button onClick={handleDeleteTask}>
+                    <Trash size={20} />
+                </button>
+            </div>
+        </div>
     )
 }
